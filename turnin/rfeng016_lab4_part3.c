@@ -23,7 +23,7 @@ void Tick() {
 
     unsigned char tempB = 0x00;
 
-    switch(state) {
+    switch (state) {
         case SM1_Start:
             state = Locked;
             break;
