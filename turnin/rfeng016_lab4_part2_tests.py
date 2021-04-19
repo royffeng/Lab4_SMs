@@ -23,19 +23,22 @@
 #     'expected': [('PORTB',0xF0)],
 #     },
 #     ]
-
-tests = [ {'description': 'PINA: 0x00, 0x01 => PORTB: 0x02, state: B1Lit',
-    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 1 },
-        {'inputs': [('PINA',0x00)], 'iterations': 1 } ],
-    'expected': [('PORTB', 0x02)],
+# test cases taken from autograder
+tests = [ {'description': 'PINA: 0x00 => PORTC: 0x07',
+    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 2 } ],
+    'expected': [('PORTC', 0x07)],
     },
-    {'description': 'PINA: 0x01 => PORTB: 0x01 state: B0Lit',
-    'steps': [ {'inputs': [('PINA',0x01)], 'iterations': 1 } ],
-    'expected': [('PORTB', 0x01)],
+    {'description': 'PINA 0x01 -> PORTC 0x08',
+    'steps': [ {'inputs': [('PINA',0x01)],'iterations': 1} ],
+    'expected': [('PORTC',0x08)],
     },
+    {'description': 'PINA 0x01 -> PORTC 0x08',
+    'steps': [ {'inputs': [('PINA',0x01)],'iterations': 1} ],
+    'expected': [('PORTC',0x08)],
+    }
     ]
 
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
 # variables listed here will display everytime you hit (and stop at) a breakpoint
-watch = ['state']
+# watch = ['state']
