@@ -15,9 +15,9 @@
 enum SM1_STATES { SM1_Start, Init, Add_Press, Add_Release, Sub_Press, Sub_Release, Reset } state;
 
 void Tick() {
-    unsigned char tmpA = PINA;
-    unsigned char tmpC = PINC;
-    switch (case) {
+    unsigned char tempA = PINA;
+    unsigned char tempC = PINC;
+    switch (state) {
         case SM1_Start:
             state = Init;
             break;
