@@ -24,14 +24,14 @@
 #     },
 #     ]
 
-tests = [ {'description': 'PINA: 0x00, 0x01 => PORTB: 0x02, state: B1Lit',
+tests = [ {'description': 'PINA: 0x00, 0x01 => PORTB: 0x01, state: B1Lit',
     'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 1 },
         {'inputs': [('PINA',0x00)], 'iterations': 1 } ],
-    'expected': [('PORTB', 0x02)],
-    },
-    {'description': 'PINA: 0x01 => PORTB: 0x01 state: B0Lit',
-    'steps': [ {'inputs': [('PINA',0x01)], 'iterations': 1 } ],
     'expected': [('PORTB', 0x01)],
+    },
+    {'description': 'PINA: 0x01 => PORTB: 0x02 state: B0Lit',
+    'steps': [ {'inputs': [('PINA',0x01)], 'iterations': 1 } ],
+    'expected': [('PORTB', 0x02)],
     },
     ]
 
